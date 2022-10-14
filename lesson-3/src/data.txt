@@ -1,0 +1,46 @@
+  <div className="row">
+          <div className="col-12">
+            <div className="card w-75 mx-auto bg-info shadow p-5" ref={st}>
+                 <Input 
+                 val={userName} 
+                 setVal={setUserName} 
+                 type={"text"} 
+                 pl={"Enter username"}
+                 />
+
+                 <Input 
+                 val={age} 
+                 setVal={setAge} 
+                 type={"text"} 
+                 pl={"Enter username"}
+                 />
+                 
+                 <button className="btn btn-primary w-75 mx-auto" onClick={()=>addUser()}> 
+                    ADD INFO
+                 </button>
+
+            </div>
+          </div>
+        </div>
+        <div className="col-12 my-5 bg-light w-75 mx-auto p-5">
+          <h3 className="text-center text-danger">
+            USER lIST
+          </h3>
+          <table className="table table-striped table-hover">
+            
+              <thead>
+                <tr>
+                  <th>ID</th> <th>Name</th> <th>Age</th>
+                </tr>
+              </thead>
+  
+                <tbody>
+                   { data.map((item,index)=>{
+                      return (
+                        <TableRow num={index+1} data=
+                        {item} key={item.id}/>
+                      );
+                     })}
+              </tbody>
+          </table>
+        </div>
